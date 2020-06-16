@@ -32,13 +32,13 @@ module.exports = {
   
   // Pluins que utilizaremos
   plugins: [
-    new HtmlWebpackPluing([
+    new HtmlWebpackPluing(
       {
         inject: true,
         template: './public/index.html',
         filename: './index.html'
       }
-    ])
+    ),
   ]
 }
 
