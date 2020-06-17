@@ -2,6 +2,10 @@
 const path = require('path'); 
 //👇🏼 Permite trabajar con HTML
 const HtmlWebpackPluing = require('html-webpack-plugin');
+//👇🏼 Hacemos referencía al paquete instalado - copy-webpack-plugin-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+
 
 //👇🏼 Creamos modulo para configurar todo lo que va a suceder
 module.exports = {
@@ -29,7 +33,6 @@ module.exports = {
       }
     ]
   },
-  
   // Pluins que utilizaremos
   plugins: [
     new HtmlWebpackPluing(
@@ -39,6 +42,10 @@ module.exports = {
         filename: './index.html'
       }
     ),
+    new CopyWebpackPlugin({
+      patterns: [{from: './src/styles/styles.css',
+      to: ''}],
+    })
   ]
 }
 
